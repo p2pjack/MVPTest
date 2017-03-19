@@ -3,20 +3,14 @@ package com.uk.umf_solutions.mvptest.main.activity.view.recycler;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.uk.umf_solutions.mvptest.R;
 
 /**
- * ---------------------------------------------------
- * Created by Tin Megali on 18/03/16.
- * Project: tuts+mvp_sample
- * ---------------------------------------------------
- * <a href="http://www.tinmegali.com">tinmegali.com</a>
- * <a href="http://www.github.com/tinmegali>github</a>
- * ---------------------------------------------------
+ *
+ *
  */
 public class NotesViewHolder extends RecyclerView.ViewHolder {
 

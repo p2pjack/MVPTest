@@ -21,16 +21,9 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Presenter layer on Model View Presenter pattern
  *
- * ---------------------------------------------------
- * Created by Tin Megali on 18/03/16.
- * Project: tuts+mvp_sample
- * ---------------------------------------------------
- * <a href="http://www.tinmegali.com">tinmegali.com</a>
- * <a href="http://www.github.com/tinmegali>github</a>
- * ---------------------------------------------------
  */
+
 public class MainPresenter implements MVP_Main.ProvidedPresenterOps, MVP_Main.RequiredPresenterOps {
 
     // View reference. We use as a WeakReference
@@ -261,7 +254,7 @@ public class MainPresenter implements MVP_Main.ProvidedPresenterOps, MVP_Main.Re
      * @param noteText  String with Note text
      * @return  A Note object
      */
-    public Note makeNote(String noteText) {
+    private Note makeNote(String noteText) {
         Note note = new Note();
         note.setText( noteText );
         note.setDate(getDate());
@@ -327,7 +320,7 @@ public class MainPresenter implements MVP_Main.ProvidedPresenterOps, MVP_Main.Re
      * @param adapterPos    Adapter position
      * @param layoutPos     Recycler layout position
      */
-    public void deleteNote(final Note note, final int adapterPos, final int layoutPos) {
+    private void deleteNote(final Note note, final int adapterPos, final int layoutPos) {
         getView().showProgress();
         new AsyncTask<Void, Void, Boolean>() {
             @Override

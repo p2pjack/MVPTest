@@ -5,26 +5,20 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * ---------------------------------------------------
- * Created by Tin Megali on 18/03/16.
- * Project: tuts+mvp_sample
- * ---------------------------------------------------
- * <a href="http://www.tinmegali.com">tinmegali.com</a>
- * <a href="http://www.github.com/tinmegali>github</a>
- * ---------------------------------------------------
+ *
  */
 public class DBSchema extends SQLiteOpenHelper {
 
     private static final int    DB_VERSION  = 1;
     private static final String DB_NAME     = "mvp_sample.db";
 
-    public DBSchema(Context context)
+    DBSchema(Context context)
     {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
     //Tables
-    public static final String TABLE_NOTES  = "notes";
+    static final String TABLE_NOTES  = "notes";
 
     private static final String COMMA_SPACE     = ", ";
     private static final String CREATE_TABLE    = "CREATE TABLE ";

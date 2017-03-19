@@ -9,22 +9,15 @@ import java.util.ArrayList;
 
 /**
  * Model layer on Model View Presenter Pattern
- *
- * ---------------------------------------------------
- * Created by Tin Megali on 18/03/16.
- * Project: tuts+mvp_sample
- * ---------------------------------------------------
- * <a href="http://www.tinmegali.com">tinmegali.com</a>
- * <a href="http://www.github.com/tinmegali>github</a>
- * ---------------------------------------------------
  */
+
 public class MainModel implements MVP_Main.ProvidedModelOps {
 
     // Presenter reference
     private MVP_Main.RequiredPresenterOps mPresenter;
     private DAO mDAO;
     // Recycler data
-    public ArrayList<Note> mNotes;
+    private ArrayList<Note> mNotes;
 
     /**
      * Main constructor, called by Activity during MVP setup
@@ -35,15 +28,15 @@ public class MainModel implements MVP_Main.ProvidedModelOps {
         mDAO = new DAO( mPresenter.getAppContext() );
     }
 
-    /**
-     * Test contructor. Called only during unit testing
-     * @param presenter Presenter instance
-     * @param dao       DAO instance
-     */
-    public MainModel(MVP_Main.RequiredPresenterOps presenter, DAO dao) {
-        this.mPresenter = presenter;
-        mDAO = dao;
-    }
+//    /**
+//     * Test contructor. Called only during unit testing
+//     * @param presenter Presenter instance
+//     * @param dao       DAO instance
+//     */
+//    public MainModel(MVP_Main.RequiredPresenterOps presenter, DAO dao) {
+//        this.mPresenter = presenter;
+//        mDAO = dao;
+//    }
 
     /**
      * Called by Presenter when View is destroyed
@@ -83,7 +76,7 @@ public class MainModel implements MVP_Main.ProvidedModelOps {
      * @param note  Note to check
      * @return      Positon on ArrayList
      */
-    public int getNotePosition(Note note) {
+    private int getNotePosition(Note note) {
         for (int i=0; i<mNotes.size(); i++){
             if ( note.getId() == mNotes.get(i).getId())
                 return i;

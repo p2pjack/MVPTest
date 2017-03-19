@@ -9,27 +9,19 @@ import com.uk.umf_solutions.mvptest.models.Note;
 import java.util.ArrayList;
 
 /**
- * ---------------------------------------------------
- * Created by Tin Megali on 18/03/16.
- * Project: tuts+mvp_sample
- * ---------------------------------------------------
- * <a href="http://www.tinmegali.com">tinmegali.com</a>
- * <a href="http://www.github.com/tinmegali>github</a>
- * ---------------------------------------------------
+ *
  */
 public class DAO {
 
     private DBSchema mHelper;
-    private Context mContext;
 
     //SELECTIONS
     private static final String     SELECT_ID_BASED = DBSchema.TB_NOTES.ID + " = ? ";
-    private static final String     PROJECTION_ALL  = " * ";
-    public static final String      SORT_ORDER_DEFAULT  = DBSchema.TB_NOTES.ID + " DESC";
+    //private static final String     PROJECTION_ALL  = " * ";
+    private static final String      SORT_ORDER_DEFAULT  = DBSchema.TB_NOTES.ID + " DESC";
 
     public DAO(Context context) {
-        this.mContext = context;
-        mHelper = new DBSchema(mContext);
+        mHelper = new DBSchema(context);
     }
 
     private SQLiteDatabase getReadDB(){
@@ -92,7 +84,7 @@ public class DAO {
         }
     }
 
-    public Note getNote(int id){
+    private Note getNote(int id){
         SQLiteDatabase db = getReadDB();
         Cursor c = db.query(
                 DBSchema.TABLE_NOTES,

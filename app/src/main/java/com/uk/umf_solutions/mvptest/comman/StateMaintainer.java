@@ -15,9 +15,9 @@ import java.util.HashMap;
 
 public class StateMaintainer {
 
-    protected final String TAG = getClass().getSimpleName();
+    private final String TAG = getClass().getSimpleName();
 
-    private final String mStateMaintenerTag;
+    private final String mStateMaintainerTag;
     private final WeakReference<FragmentManager> mFragmentManager;
     private StateMngFragment mStateMaintainerFrag;
     private boolean mIsRecreating;
@@ -27,25 +27,25 @@ public class StateMaintainer {
      */
     public StateMaintainer(FragmentManager fragmentManager, String stateMaintainerTAG) {
         mFragmentManager = new WeakReference<>(fragmentManager);
-        mStateMaintenerTag = stateMaintainerTAG;
+        mStateMaintainerTag = stateMaintainerTAG;
     }
 
     public boolean firstTimeIn() {
         try {
             // Recuperando referência
             mStateMaintainerFrag = (StateMngFragment)
-                    mFragmentManager.get().findFragmentByTag(mStateMaintenerTag);
+                    mFragmentManager.get().findFragmentByTag(mStateMaintainerTag);
 
             // Criando novo RetainedFragment
             if (mStateMaintainerFrag == null) {
-                Log.d(TAG, "Criando novo RetainedFragment " + mStateMaintenerTag);
+                Log.d(TAG, "Criando novo RetainedFragment " + mStateMaintainerTag);
                 mStateMaintainerFrag = new StateMngFragment();
                 mFragmentManager.get().beginTransaction()
-                        .add(mStateMaintainerFrag, mStateMaintenerTag).commit();
+                        .add(mStateMaintainerFrag, mStateMaintainerTag).commit();
                 mIsRecreating = false;
                 return true;
             } else {
-                Log.d(TAG, "Retornando retained fragment existente " + mStateMaintenerTag);
+                Log.d(TAG, "Retornando retained fragment existente " + mStateMaintainerTag);
                 mIsRecreating = true;
                 return false;
             }
@@ -59,7 +59,7 @@ public class StateMaintainer {
         return mIsRecreating;
     }
 
-    public void put(String key, Object obj) {
+    private void put(String key, Object obj) {
         mStateMaintainerFrag.put(key, obj);
     }
 

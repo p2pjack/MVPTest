@@ -16,16 +16,9 @@ import com.uk.umf_solutions.mvptest.models.Note;
  * Each layer implements its respective interface:
  *      View implements RequiredViewOps
  *      Presenter implements ProvidedPresenterOps, RequiredPresenterOps
- *      Model implements ProvidedModelOps
- *
- * ---------------------------------------------------
- * Created by Tin Megali on 18/03/16.
- * Project: tuts+mvp_sample
- * ---------------------------------------------------
- * <a href="http://www.tinmegali.com">tinmegali.com</a>
- * <a href="http://www.github.com/tinmegali>github</a>
- * ---------------------------------------------------
+ *      Model implements ProvidedModelOps *
  */
+
 public interface MVP_Main {
     /**
      * Required View methods available to Presenter.
