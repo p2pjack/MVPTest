@@ -22,6 +22,13 @@ import com.uk.umf_solutions.mvptest.main.activity.model.MainModel;
 import com.uk.umf_solutions.mvptest.main.activity.presenter.MainPresenter;
 import com.uk.umf_solutions.mvptest.main.activity.view.recycler.NotesViewHolder;
 
+/**
+ * Start to change 19-03-17
+ *
+ **/
+
+
+
 public class MainActivity
         extends AppCompatActivity
     implements View.OnClickListener, MVP_Main.RequiredViewOps
