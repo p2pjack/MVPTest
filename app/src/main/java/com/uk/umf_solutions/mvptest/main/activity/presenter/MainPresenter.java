@@ -125,7 +125,7 @@ public class MainPresenter implements MVP_Main.ProvidedPresenterOps, MVP_Main.Re
     }
 
     /**
-     * Creat a Toast object with given message
+     * Create a Toast object with given message
      * @param msg   Toast message
      * @return      A Toast object
      */
@@ -144,7 +144,7 @@ public class MainPresenter implements MVP_Main.ProvidedPresenterOps, MVP_Main.Re
 
     /**
      * Create the RecyclerView holder and setup its view
-     * @param parent    Recycler viewgroup
+     * @param parent    Recycler view group
      * @param viewType  Holder type
      * @return          Recycler ViewHolder
      */
@@ -285,7 +285,7 @@ public class MainPresenter implements MVP_Main.ProvidedPresenterOps, MVP_Main.Re
     /**
      * Create an AlertBox to confirm a delete action
      * @param note          Note to be deleted
-     * @param adapterPos    Adapter postion
+     * @param adapterPos    Adapter position
      * @param layoutPos     Recycler layout position
      */
     private void openDeleteAlert(final Note note, final int adapterPos, final int layoutPos){

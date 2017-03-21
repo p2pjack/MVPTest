@@ -28,16 +28,6 @@ public class MainModel implements MVP_Main.ProvidedModelOps {
         mDAO = new DAO( mPresenter.getAppContext() );
     }
 
-//    /**
-//     * Test contructor. Called only during unit testing
-//     * @param presenter Presenter instance
-//     * @param dao       DAO instance
-//     */
-//    public MainModel(MVP_Main.RequiredPresenterOps presenter, DAO dao) {
-//        this.mPresenter = presenter;
-//        mDAO = dao;
-//    }
-
     /**
      * Called by Presenter when View is destroyed
      * @param isChangingConfiguration   true configuration is changing
@@ -62,7 +52,7 @@ public class MainModel implements MVP_Main.ProvidedModelOps {
     }
 
     /**
-     * Get a specific note from notes list using its array postion
+     * Get a specific note from notes list using its array position
      * @param position    Array position
      * @return            Note from list
      */
@@ -72,9 +62,9 @@ public class MainModel implements MVP_Main.ProvidedModelOps {
     }
 
     /**
-     * Get Note's positon on ArrayList
+     * Get Note's position on ArrayList
      * @param note  Note to check
-     * @return      Positon on ArrayList
+     * @return      Position on ArrayList
      */
     private int getNotePosition(Note note) {
         for (int i=0; i<mNotes.size(); i++){

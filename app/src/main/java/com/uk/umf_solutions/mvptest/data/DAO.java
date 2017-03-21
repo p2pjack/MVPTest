@@ -17,7 +17,6 @@ public class DAO {
 
     //SELECTIONS
     private static final String     SELECT_ID_BASED = DBSchema.TB_NOTES.ID + " = ? ";
-    //private static final String     PROJECTION_ALL  = " * ";
     private static final String      SORT_ORDER_DEFAULT  = DBSchema.TB_NOTES.ID + " DESC";
 
     public DAO(Context context) {

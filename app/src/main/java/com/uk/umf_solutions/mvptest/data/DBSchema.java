@@ -23,14 +23,10 @@ public class DBSchema extends SQLiteOpenHelper {
     private static final String COMMA_SPACE     = ", ";
     private static final String CREATE_TABLE    = "CREATE TABLE ";
     private static final String PRIMARY_KEY     = "PRIMARY KEY ";
-    private static final String UNIQUE          = "UNIQUE ";
     private static final String TYPE_TEXT       = " TEXT ";
     private static final String TYPE_DATE       = " DATETIME ";
     private static final String TYPE_INT        = " INTEGER ";
-    private static final String DEFAULT         = "DEFAULT ";
-    private static final String AUTOINCREMENT   = "AUTOINCREMENT ";
     private static final String NOT_NULL        = "NOT NULL ";
-    private static final String DROP_TABLE      = "DROP TABLE IF EXISTS ";
 
     public static final class TB_NOTES {
         public static final String ID = "_id";

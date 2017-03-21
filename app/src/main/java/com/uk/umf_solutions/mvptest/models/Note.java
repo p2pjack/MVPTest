@@ -18,16 +18,16 @@ public class Note {
     public Note() {
     }
 
-    public Note(int id, String mText, String mDate) {
-        this.id = id;
-        this.mText = mText;
-        this.mDate = mDate;
-    }
-
-    public Note(String mText, String mDate) {
-        this.mText = mText;
-        this.mDate = mDate;
-    }
+//    public Note(int id, String mText, String mDate) {
+//        this.id = id;
+//        this.mText = mText;
+//        this.mDate = mDate;
+//    }
+//
+//    public Note(String mText, String mDate) {
+//        this.mText = mText;
+//        this.mDate = mDate;
+//    }
 
     public ContentValues getValues(){
         ContentValues cv = new ContentValues();

@@ -149,12 +149,12 @@ public class MainActivity
 
     @Override
     public void showProgress() {
-        mProgress.setVisibility(View.VISIBLE);;
+        mProgress.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideProgress() {
-        mProgress.setVisibility(View.GONE);;
+        mProgress.setVisibility(View.GONE);
     }
 
     @Override

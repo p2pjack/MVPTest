@@ -32,31 +32,26 @@ public class StateMaintainer {
 
     public boolean firstTimeIn() {
         try {
-            // Recuperando referência
             mStateMaintainerFrag = (StateMngFragment)
                     mFragmentManager.get().findFragmentByTag(mStateMaintainerTag);
 
-            // Criando novo RetainedFragment
             if (mStateMaintainerFrag == null) {
-                Log.d(TAG, "Criando novo RetainedFragment " + mStateMaintainerTag);
+                Log.d(TAG, "creating new RetainedFragment " + mStateMaintainerTag);
                 mStateMaintainerFrag = new StateMngFragment();
                 mFragmentManager.get().beginTransaction()
                         .add(mStateMaintainerFrag, mStateMaintainerTag).commit();
                 mIsRecreating = false;
                 return true;
             } else {
-                Log.d(TAG, "Retornando retained fragment existente " + mStateMaintainerTag);
+                Log.d(TAG, "\n" +
+                        "Returning retained fragment existence " + mStateMaintainerTag);
                 mIsRecreating = true;
                 return false;
             }
         } catch (NullPointerException e) {
-            Log.w(TAG, "Erro firstTimeIn()");
+            Log.w(TAG, "Error firstTimeIn()");
             return false;
         }
-    }
-
-    public boolean wasRecreated() {
-        return mIsRecreating;
     }
 
     private void put(String key, Object obj) {
@@ -73,10 +68,6 @@ public class StateMaintainer {
 
     }
 
-    public boolean hasKey(String key) {
-        return mStateMaintainerFrag.get(key) != null;
-    }
-
     public static class StateMngFragment extends Fragment {
         private HashMap<String, Object> mData = new HashMap<>();
 
@@ -89,10 +80,6 @@ public class StateMaintainer {
 
         public void put(String key, Object obj) {
             mData.put(key, obj);
-        }
-
-        public void put(Object object) {
-            put(object.getClass().getName(), object);
         }
 
         @SuppressWarnings("unchecked")
